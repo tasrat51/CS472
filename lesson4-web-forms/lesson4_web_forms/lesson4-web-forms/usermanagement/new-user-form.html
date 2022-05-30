@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="author" content="O. Kalu">
+    <link rel="icon" href="favicon.ico">
+    <!--    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-C++cugH8+Uf86JbNOnQoBweHHAe/wVKN/mb0lTybu/NZ9sEYbd+BbbYtNpWYAsNP" crossorigin="anonymous">-->
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-uhut8PejFZO8994oEgm/ZfAv0mW1/b83nczZzSwElbeILxwkN491YQXsCFTE6+nx" crossorigin="anonymous">
+    <!--    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-WTtvlZJeRyCiKUtbQ88X1x9uHmKi0eHCbQ8irbzqSLkE0DpAZuixT5yFvgX0CjIu" crossorigin="anonymous">-->
+    <!--    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/yeti/bootstrap.min.css" rel="stylesheet" integrity="sha384-w6tc0TXjTUnYHwVwGgnYyV12wbRoJQo9iMlC2KdkdmVvntGgzT9jvqNEF/uKaF4m" crossorigin="anonymous">-->
+    <!--    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/pulse/bootstrap.min.css" rel="stylesheet" integrity="sha384-/uQFqO50IaQu2rNJYKPpV7zwsWJtd6V4DGX4wMw1ATz4KPuZEV96qQ2heVAw2kr2" crossorigin="anonymous">-->
+    <!--    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/minty/bootstrap.min.css" rel="stylesheet" integrity="sha384-9NlqO4dP5KfioUGS568UFwM3lbWf3Uj3Qb7FBHuIuhLoDp3ZgAqPE1/MYLEBPZYM" crossorigin="anonymous">-->
+    <!--    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lumen/bootstrap.min.css" rel="stylesheet" integrity="sha384-iqcNtN3rj6Y1HX/R0a3zu3ngmbdwEa9qQGHdkXwSRoiE+Gj71p0UNDSm99LcXiXV" crossorigin="anonymous">-->
+    <!--    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-ciphE0NCAlD2/N6NUApXAN2dAs/vcSAOTzyE202jJx3oS8n4tAQezRgnlHqcJ59C" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="./css/master.css">
+    
+    <title>The eLibrary - a Spring Security Demo webapp - Users Management</title>
+    
+</head>
+<body>
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a style="padding-right: 2em;" class="navbar-brand" href="/elibrary/public/home">eLibrary<sup>&reg;</sup> : : : a Spring Security Demo</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item" style="border-left: white 1px solid; padding-left: 2em; padding-right: 2em;">
+                    <a class="nav-link" href="/elibrary/public/about">About Us</a>
+                </li>
+                <li class="nav-item" style="border-left: white 1px solid; padding-left: 2em; padding-right: 2em;">
+                    <a class="nav-link" href="/elibrary/public/virtualtour">Virtual Tour</a>
+                </li>
+                <li class="nav-item" style="border-left: white 1px solid; padding-left: 2em; padding-right: 2em;">
+                    <a class="nav-link" href="/elibrary/secured/services">Services</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                
+                <span style="color:#fff;padding-left: 0em; padding-right: 0.5em;">Welcome, </span><span style="color:#fff;padding-left: 0em; padding-right: 0.5em;">Ana Smith Admin</span>
+                
+                <a href="/elibrary/public/logout" class="btn btn-secondary">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
+                </a>
+            </form>
+        </div>
+    </nav>
+</header>
+
+    <div style="padding-top:1em;" class="container">
+        <div>
+            <span style="font-size: 2em; color: #32a5e7;">New eLibrary<sup>&reg;</sup> User</span>
+        </div>
+        <hr/>
+        <div style="font-size: 1em; padding-top: 1em;">
+            <!-- Add form here -->
+            <form id="newUserForm" method="post" action="/elibrary/secured/services/admin/usrmgmt/user/new">
+                <fieldset>
+                    <legend>User Information</legend>
+                    <input
+                            type="hidden"
+                            name="_csrf"
+                            value="3f6f1895-0bfe-411c-b3b2-6df0ed015753" />
+                    <input type="hidden" name="userId" value="">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label for="firstName">First Name*</label>
+                                
+                                <input id="firstName" name="firstName" type="text" class="form-control"
+                                       value="" required autofocus>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="middleName">Middle Name</label>
+                                
+                                <input id="middleName" name="middleName" type="text" class="form-control"
+                                       value="">
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label for="lastName">Last Name*</label>
+                                
+                                <input id="lastName" name="lastName" type="text" class="form-control"
+                                       value="" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="email">Email*</label>
+                                
+                                <input id="email" name="email" type="text" class="form-control"
+                                       value="" required>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Login Credentials</legend>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="username">Username*</label>
+                                
+                                <input id="username" name="username" type="text" class="form-control"
+                                       value="" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                
+                                <input id="password" name="password" type="password" class="form-control"
+                                       value="" minlength="8" required>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Roles</legend>
+                    <label style="padding-right: 4em;">
+                    <input style="margin-right: .5em;"
+                        name="roles" type="checkbox"
+                        value="1" id="roles1"><input type="hidden" name="_roles" value="on"/>ROLE_ADMIN</input>
+                    </label><label style="padding-right: 4em;">
+                    <input style="margin-right: .5em;"
+                        name="roles" type="checkbox"
+                        value="3" id="roles2"><input type="hidden" name="_roles" value="on"/>ROLE_LIBMEMBER</input>
+                    </label><label style="padding-right: 4em;">
+                    <input style="margin-right: .5em;"
+                        name="roles" type="checkbox"
+                        value="2" id="roles3"><input type="hidden" name="_roles" value="on"/>ROLE_LIBRARIAN</input>
+                    </label>
+                </fieldset>
+                <hr style="width: 100%; border: 1em solid #32a5e7;">
+                <fieldset>
+                    <legend>Other Settings</legend>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="accountNonExpired">Account Expired*</label>
+                                
+                                <select id="accountNonExpired" name="accountNonExpired" class="form-control"
+                                       value="true" required>
+                                    <option value="true">No</option>
+                                    <option value="false">Yes</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="accountNonLocked">Account Locked*</label>
+                                
+                                <select id="accountNonLocked" name="accountNonLocked" class="form-control"
+                                        value="true" required>
+                                    <option value="true">No</option>
+                                    <option value="false">Yes</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="credentialsNonExpired">Credentials Expired*</label>
+                                
+                                <select id="credentialsNonExpired" name="credentialsNonExpired" class="form-control"
+                                        value="true" required>
+                                    <option value="true">No</option>
+                                    <option value="false">Yes</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="enabled">Account Status*</label>
+                                
+                                <select id="enabled" name="enabled" class="form-control"
+                                        required>
+                                    <option value="true" selected="selected">Enabled</option>
+                                    <option value="false">Disabled</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="users-list.html" class="btn btn-warning btn-lg">Cancel</a>
+                    </div>
+                    <div class="col-md-6" style="text-align: right;">
+                        <button type="reset" class="btn btn-primary btn-lg mx-2">Reset</button>
+                        <button type="submit" class="btn btn-success btn-lg">
+                            <i class="fa-solid fa-floppy-disk"></i> Save
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+        <span class="text-muted">O. Kalu : : : CS472-WAP</span>
+        <span style="float:right;" class="text-muted">&copy; June 2022</span>
+    </div>
+</footer>
+
+    <!-- ================================================== -->
+    <!-- Bootstrap core JavaScript source files -->
+    <!-- Placed at the end of the document -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

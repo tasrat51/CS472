@@ -1,0 +1,36 @@
+/* Style all input fields */
+.input {
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+margin-top: 6px;
+margin-bottom: 16px;
+}/* Style the submit button */
+input[type=submit] {
+background-color: #04AA6D;
+color: white;
+}/* Style the container for inputs */
+.container {
+background-color: #f1f1f1;
+padding: 20px;
+}
+
+nav{padding-left: 0px;background-color: #3D99CE;text-align: left;
+    width: 100%;
+}
+.page{
+    float: right;
+}
+li{display:inline-block;
+    padding-left: 40px;;
+
+}
+
+
+.inline{
+    
+    list-style: none;
+    padding: 10px 20px;
+}
