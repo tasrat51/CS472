@@ -223,3 +223,4 @@ y= z;
 z = sumOfPrevTwo;
 }
 } console.log(printfibo(1,2,3,4));
+
