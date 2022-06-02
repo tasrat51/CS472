@@ -1,0 +1,7 @@
+/* style.css */
+h1.lessonTitle {
+    color: blue;
+}
+h1.clickedTitle {
+    color: red;
+}
