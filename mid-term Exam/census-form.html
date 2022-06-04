@@ -1,20 +1,22 @@
+!
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The South West-Regioal Census</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.1.3/cerulean/bootstrap.min.css" integrity="sha512-CVn5BJ6vue0EG9CDO6yfg3hOvzQ43xEXOSUEkUtiV3pDy2S7O0saUZ0vbDkZYVX30NvqLLZo51JBzUyreGyqvg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-OvBgP9A2JBgiRad/mM36mkzXSXaJE9BEIENnVEmeZdITvwT09xnxLtT4twkCa8m/loMbPHsvPl0T8lRGVBwjlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-OvBgP9A2JBgiRad/mM36mkzXSXaJE9BEIENnVEmeZdITvwT09xnxLtT4twkCa8m/loMbPHsvPl0T8lRGVBwjlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="./census-form-app.js"></script>
+    
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">The South west-regional</a>
+              <a class="navbar-brand" href="./index.html">The South West-Regioal Censu</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -22,51 +24,103 @@
               <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto">
                   <li class="nav-item active">
-                    <a class="nav-link" href=./census.html>Home
+                    <a class="nav-link" href="./index.html">Home
                       <span class="visually-hidden">(current)</span>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">census form</a>
-                  </li>
-    
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
+                    <a class="nav-link" href="./census-form.html">Census Form</a>
                   </li>
                 </ul>
-                <div class="d-flex">
-                    <span id="spnDateTime"></span>Saturday, 4 june 2022 - 11:26:35 AM</span>
-                
-                </div>
+                <form class="d-flex">
+                  <span id="spnDateTime">Saturday, 4 june 2022- 11:26:35 AM</span>
+                </form>
               </div>
             </div>
           </nav>
-
-
     </header>
     <main>
-        <div class ="container">
-            <h2>Census Form</h2>
-            <hr>
-            <!--Add form here-->
+        <div class="container">
+            <h2>
+                Census Form
+            </h2>    
+                <hr>   
+                <form id="censusForm" method="post">
+
+<div class="row census-form-row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                            <label for="fullName"> Full Name:*</label>
+                            <input required class="form-control" type="text" name="fullName" id="fullName">
+                            <small>Enter Your Full Name as in Your Government- issue Id Card</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row census-form-row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                            <label for="citizenId"> Citizen ID:*</label>
+                            <input placeholder="xxxxxxxxxx"  required class="form-control" pattern="\d{10}" type="text" name="citizenId" id="citizenId">
+                            
+                            </div>
+                        </div>
+                        <div class="col-md-6"> 
+                            <div class="form-group">
+                            <label for="ssn"> Social Sec No:*</label>
+                            <input placeholder="xxx-xx-xxxx" pattern="\d{3}-\d{2}-\d{4}" required class="form-control" type="text" name="ssn" id="ssn">
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div class="row census-form-row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                            <label for="state"> State :*</label>
+                            <select class="form-Control" name="state" id="state">
+                                <option value="">Select State... </option>
+                                <option value="Arizona">Arizona</option>
+                                <option value="Texas">Texas</option>
+                            </select>
+            
+                            </div>
+                        </div>
+                        <div class="col-md-6"> 
+                            <div class="form-group">
+                            <label > Is a Senior Citizen:*</label>
+                            <div>
+                            <input value="Yes" required type="radio" name="radBtnSnrCitizen" id="radBtnSnrCitizenYes">
+                            <label for="radBtnSnrCitizen"> Yes</label>
+                            <input value= "No" required type="radio" name="radBtnSnrCitizen" id="radBtnSnrCitizenNo">
+                            <label for="radBtnSnrCitizen"> No</label>
+                            </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            </div>
+                        <div class="col-md-6">
+                            <input class="btn btn-secondary" type="reset" value="Reset">
+                            <input class="btn btn-primary" type="submit" value="Submit">
+
+                        </div>
+                        
+
+                    </div>
+                </form>          
         </div>
+
     </main>
     <footer>
-     <section class = "footer section left">
-      <span>Tirhas ::: Cs472-WAP</span>
-     </section>
-     <section class ="footer-section right">
-         <span>&copy: june 2022</span>
-     </section>
+        <section class="footer-section-left">
+            <span>Tirhas: : : CS472-WAP</span>
+        </section>
+        <section class="footer-section-right">
+            <span> &copy;June 2022</span>
+        </section>
 
     </footer>
-    
 </body>
 </html>

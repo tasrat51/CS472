@@ -20,9 +20,12 @@ footer > section{
 footer > section.footer-section-right {
     justify-content: end;
 }
-footer > section.footer section right{
+footer > section.footer-section-right span{
     margin: 0 1em 0 1em;
 }
-footer > section.footer-section-right span {
+footer > section.footer-section-left span {
     margin: 0 1em 0 1em;
+}
+div.census-form-row{
+    margin-bottom: 1.2em;
 }
