@@ -130,7 +130,7 @@
      }
      return filtered;
   }
-   console.log(filterLongWords([" Terry ", " Siku ", " Fevi "],2));
+   console.log(filterLongWords([" Terry ", " Siku ", " Fevi "],3));
 
 //8.Write a function named, computeSumOfSquares, that takes as input, an array of numbers and calculates and 
 //returns the sum of the squares of each number in the input array. E.g. 

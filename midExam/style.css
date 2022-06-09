@@ -1,0 +1,31 @@
+/*styele css*/
+
+span#spnDateTime{
+    color: rgb(253, 251, 249);
+    }
+    #logo{
+        float: right;
+    }
+    footer{
+        position: fixed;
+        bottom: 0;
+        background-color: rgb(226, 223, 223);
+        width: 100%;
+        display: flex;
+        min-height: 8vh;
+        align-items: center;
+    }
+    footer >section{
+    display: flex;
+    width: 50%;
+    }
+    .right{
+        justify-content: end;
+    }
+    div.cncsus-form-row{
+        margin-bottom: 1.2em;
+    }
+    #Ownership{
+        display: flex;
+        justify-content: center;
+    }

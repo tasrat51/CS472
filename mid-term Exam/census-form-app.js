@@ -9,14 +9,16 @@ census-form-app.js
 */
 
 "use strict";
-window.onload=function(){
+// window.onload=function(){
     const censusForm= document.getElementById("censusForm");
     censusForm.addEventListener("submit", event => {
         event.preventDefault();
 
-        const fullName= document.getElementById("fullName");
+         const fullName= document.getElementById("fullName");
+       // console.log(fullName);
         const citizenId= document.getElementById("citizenId");
         const ssn= document.getElementById("ssn");
+       // console.log(ssn);
         const state= document.getElementById("fullName");
         const snrCitizen= censusForm.elements["radBtnSnrCitizen"];
        // const formData= 
@@ -32,4 +34,3 @@ window.onload=function(){
         ssn.value="";
         state.value="";
     });
-}
